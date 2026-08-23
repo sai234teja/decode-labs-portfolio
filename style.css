@@ -217,6 +217,8 @@ section {
     border-radius: 20px;
     padding: 2rem;
     transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
 }
 
 .glass-card:hover {
@@ -230,6 +232,8 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .skill-category h3 {
@@ -264,8 +268,10 @@ section {
 /* Projects Grid */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .project-card {
@@ -275,11 +281,17 @@ section {
 
 .project-img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     border-radius: 15px;
     object-fit: cover;
     margin-bottom: 1.5rem;
     background: #1e293b;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .project-content h3 {
@@ -296,6 +308,7 @@ section {
 .project-links {
     display: flex;
     gap: 1rem;
+    margin-top: auto;
 }
 
 .project-links a {
@@ -332,6 +345,10 @@ section {
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+
+.cert-card .btn {
+    margin-top: auto;
 }
 
 .cert-icon {
@@ -451,7 +468,57 @@ footer {
     .hero h1 {
         font-size: 2.5rem;
     }
+    .hero .typing {
+        font-size: 1.1rem;
+    }
     section {
         padding: 60px 5%;
+    }
+}
+
+/* Experience Header Mobile-Friendly Styles */
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.experience-title h3 {
+    font-size: 1.4rem;
+    color: var(--accent-primary);
+    margin-bottom: 0.2rem;
+}
+
+.experience-title .company {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.experience-details {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.experience-details .date {
+    color: var(--accent-secondary);
+    font-weight: 600;
+}
+
+.experience-details .location {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+@media (max-width: 600px) {
+    .experience-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .experience-details {
+        text-align: left;
     }
 }
